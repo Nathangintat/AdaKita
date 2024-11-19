@@ -15,7 +15,7 @@
         <tbody th:each="u, no : ${userList}">
         <tr>
             <td th:text="${no.count}"></td>
-            <td ><a th:href="@{/user/{id}(id=${u.getId()})}" th:text="${u.getName()}"></a></td>
+            <td ><a th:href="@{/account/{id}(id=${u.getId()})}" th:text="${u.getName()}"></a></td>
         </tr>
         </tbody>
     </table>
