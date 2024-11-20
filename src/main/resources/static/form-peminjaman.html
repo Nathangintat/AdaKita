@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Peminjaman Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<style>
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: none;
+            height: 150px;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: #209246;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #176633;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .footer a {
+            color: #209246;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Full page styling */
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            margin: 2rem auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Form Peminjaman Online</h2>
+        <form action="#" method="POST">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+
+            <label for="keperluan">Keperluan</label>
+            <textarea id="keperluan" name="keperluan" placeholder="Masukkan keperluan peminjaman" required></textarea>
+
+            <label for="tanggal">Tanggal Peminjaman</label>
+            <input type="date" id="tanggal" name="tanggal" required>
+
+            <label for="durasi">Durasi Peminjaman</label>
+            <select id="durasi" name="durasi" required>
+                <option value="" disabled selected>Pilih durasi</option>
+                <option value="1_bulan">1 Bulan</option>
+            </select>
+
+            <button type="submit">Ajukan Peminjaman</button>
+        </form>
+        <div class="footer">
+            <p>Butuh bantuan? <a href="#">Hubungi kami</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
