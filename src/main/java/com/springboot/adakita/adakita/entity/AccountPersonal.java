@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "account_personal")
-public class Account_Personal extends Account{
+public class AccountPersonal extends Account{
 
     @Column(name = "tujuan_peminjaman")
     private String tujuanPeminjaman;
@@ -25,9 +25,9 @@ public class Account_Personal extends Account{
     @Column(name = "ktp")
     private String ktp;
 
-    public Account_Personal() {}
+    public AccountPersonal() {}
 
-    public Account_Personal(int account_id, String username, String password, String name, int telp_number, int poin, AccountType account_type, String tujuanPeminjaman, Date date, String pendidikan, String pekerjaan, String ktp) {
+    public AccountPersonal(int account_id, String username, String password, String name, int telp_number, int poin, AccountType account_type, String tujuanPeminjaman, Date date, String pendidikan, String pekerjaan, String ktp) {
         super(account_id, username, password, name, telp_number, poin, account_type);
         this.tujuanPeminjaman = tujuanPeminjaman;
         this.date = date;

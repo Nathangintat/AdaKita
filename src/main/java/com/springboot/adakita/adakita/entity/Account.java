@@ -28,7 +28,7 @@ public class Account {
     private int poin;
 
     @Enumerated(EnumType.STRING)
-    @Column(name="account_type")
+    @Column(name="account_type", nullable = false, updatable = false)
     private AccountType account_type;
 
     public Account(int account_id, String username, String password, String name, int telp_number, int poin, AccountType account_type) {

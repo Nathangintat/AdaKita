@@ -1,7 +1,6 @@
 package com.springboot.adakita.adakita.controller;
 
-import com.springboot.adakita.adakita.entity.Account_Personal;
-import com.springboot.adakita.adakita.entity.AccountType;
+import com.springboot.adakita.adakita.entity.AccountPersonal;
 import com.springboot.adakita.adakita.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,15 +17,15 @@ public class AccountController {
 
     // Get All Users
     @GetMapping
-    public ResponseEntity<List<Account_Personal>> getAllUsers() {
-        List<Account_Personal> users = accountService.getAllUsers();
+    public ResponseEntity<List<AccountPersonal>> getAllUsers() {
+        List<AccountPersonal> users = accountService.getAllUsers();
         return ResponseEntity.ok(users);
     }
 
     // Get User by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Account_Personal> getUserById(@PathVariable("id") int userId) {
-        Account_Personal user = accountService.getUserById(userId);
+    public ResponseEntity<AccountPersonal> getUserById(@PathVariable("id") int userId) {
+        AccountPersonal user = accountService.getUserById(userId);
         if (user == null) {
             return ResponseEntity.notFound().build();
         }
@@ -35,18 +34,18 @@ public class AccountController {
 
     // Add New User
     @PostMapping
-    public ResponseEntity<Account_Personal> addUser(@RequestBody Account_Personal account) {
-        Account_Personal newAccount = accountService.addUser(account);
+    public ResponseEntity<AccountPersonal> addUser(@RequestBody AccountPersonal account) {
+        AccountPersonal newAccount = accountService.addUser(account);
         return ResponseEntity.ok(newAccount);
     }
 
     // Update User
     @PutMapping("/{id}")
-    public ResponseEntity<Account_Personal> updateUser(
+    public ResponseEntity<AccountPersonal> updateUser(
             @PathVariable("id") int userId,
-            @RequestBody Account_Personal updatedAccount) {
+            @RequestBody AccountPersonal updatedAccount) {
 
-        Account_Personal existingAccount = accountService.getUserById(userId);
+        AccountPersonal existingAccount = accountService.getUserById(userId);
         if (existingAccount == null) {
             return ResponseEntity.notFound().build();
         }
@@ -57,14 +56,14 @@ public class AccountController {
         existingAccount.setPoin(updatedAccount.getPoin());
         existingAccount.setAccount_type(updatedAccount.getAccount_type());
 
-        Account_Personal updated = accountService.addUser(existingAccount);
+        AccountPersonal updated = accountService.addUser(existingAccount);
         return ResponseEntity.ok(updated);
     }
 
     // Delete User
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable("id") int userId) {
-        Account_Personal existingAccount = accountService.getUserById(userId);
+        AccountPersonal existingAccount = accountService.getUserById(userId);
         if (existingAccount == null) {
             return ResponseEntity.notFound().build();
         }
